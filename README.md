@@ -1,5 +1,5 @@
 # Hypothetical Polarization Camera
- A Visual Studio (VS) 2010 C++ implementation of Hypothetical Polarization Camera is the code of our manuscript 
+ A Visual Studio (VS) 2019 C++ implementation of Hypothetical Polarization Camera is the code of our manuscript 
  "Limitation of Rayleigh Sky Model for Bio-inspired Polarized Skylight Navigation in Three-dimensional Attitude Determination" 
  by Huaju Liang, Hongyang Bai, Ning Liu and Kai Shen.
  https://iopscience.iop.org/article/10.1088/1748-3190/ab7ab7
@@ -16,12 +16,12 @@ Draw polarization images
 
 Installation
 --------------------------
-Install Visual Studio 2010 and Matlab R2016b.
+Install Visual Studio 2019 and Matlab R2016b.
 
 
 Capture poalrization images
 --------------------------
-Open project "HypotheticalPolarizationCamera" with Visual Studio 2010.
+Open project "HypotheticalPolarizationCamera" with Visual Studio 2019.
 Using the code to call the functions "CameraParametersInit()" and "CameraSimulation()".
 
 Step 1: Initialize the hypothetical polarization camera parameters.
@@ -32,7 +32,7 @@ Step 1: Initialize the hypothetical polarization camera parameters.
 	int Camera_n_x = 1024;//Image pixel size (unit is pixel)
 	int Camera_n_z = 1280;//Image pixel size (unit is pixel)
 	double Camera_f = 4.0;//Focus of the camera (unit is millimeter)
-
+	
 	int Camera_PixelInterval = 1;//Convenient for debugging. Its value is 1 for practical application.
 	
 	//call the function "CameraParametersInit()" to initialize the camera parameters.
@@ -43,7 +43,7 @@ Step 1: Initialize the hypothetical polarization camera parameters.
 				Camera_n_x, 
 				Camera_n_z,
 				Camera_PixelInterval
-        );
+	    );
 
 
 Step 2: Hypothetical polarization camera simulation.
@@ -51,7 +51,7 @@ Step 2: Hypothetical polarization camera simulation.
 	//Three Euler angles of camera (from body to solar vector coordinate system)
 	double  psa = 78.9;//yaw angle (unit is degree)
 	double  afa = -65.2;//pitch angle (unit is degree)
-    double  beta = 278.3;//roll angle (unit is degree)
+	double  beta = 278.3;//roll angle (unit is degree)
 		
 	//Call the function "CameraSimulation()" to simulate polarization camera.
 	CameraSimulation(psa*pi/180.0,afa*pi/180.0,beta*pi/180.0,camera_state);
